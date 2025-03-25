@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './estudents.css'; // Archivo CSS para estilos
+import './EstudentsList.css';
 
 const EstudentsList = () => {
     const [students, setStudents] = useState([]);
@@ -21,6 +21,12 @@ const EstudentsList = () => {
         if (formData.nombre && formData.edad && formData.carnet) {
             setStudents([...students, formData]);
             setFormData({ nombre: '', edad: '', carnet: '' }); // Limpiar el formulario
+
+            // Agregar clase al body para el efecto de fondo
+            document.body.classList.add('success-background');
+            setTimeout(() => {
+                document.body.classList.remove('success-background');
+            }, 1000); // Duración del efecto (1 segundo)
         } else {
             alert('Por favor, completa todos los campos.');
         }

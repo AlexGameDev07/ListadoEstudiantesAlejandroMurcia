@@ -1,8 +1,9 @@
 /* Estilo general */
+/* Fondo animado */
 body {
     font-family: 'Poppins', sans-serif;
-    /* Nueva tipografía */
-    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    background: linear-gradient(135deg, #1e1e2f, #3a3a5f, #6c63ff);
+    background-size: 400% 400%; /* Aumenta el tamaño del fondo para un efecto más dinámico */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,27 +12,32 @@ body {
     height: 100vh;
     overflow: hidden;
     color: #f5f5f5;
-    animation: backgroundAnimation 10s infinite alternate;
+    animation: backgroundAnimation 12s ease-in-out infinite; /* Ajusta la duración y suavidad */
 }
 
-/* Fondo animado */
+/* Animación del fondo */
 @keyframes backgroundAnimation {
     0% {
-        background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+        background-position: 0% 50%;
     }
-
     50% {
-        background: linear-gradient(135deg, #2a2a40, #3a3a5f);
+        background-position: 100% 50%;
     }
-
     100% {
-        background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+        background-position: 0% 50%;
     }
+}
+
+/* Fondo temporal al agregar un estudiante */
+body.success-background {
+    background: linear-gradient(135deg, #1e1e2f, #3a5f3a, #6c63ff); /* Verde armonioso */
+    animation: none; /* Pausa la animación mientras está activa */
+    transition: background 0.5s ease-in-out; /* Transición suave */
 }
 
 /* Contenedor principal */
 .container {
-    background: rgba(50, 50, 70, 0.9);
+    background: rgba(40, 40, 60, 0.95);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     padding: 20px;
